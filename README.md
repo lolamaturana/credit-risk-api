@@ -126,6 +126,7 @@ curl -X 'POST' \
 ## Lógica de Negocio y Política de Derivación (Incertidumbre Epistémica)
 
 La API explota la cuantificación de incertidumbre derivada de los límites probabilísticos calculados mediante el calibrador de Venn-Abers. La métrica utilizada para activar las reglas automatizadas es la anchura del intervalo:
+
 $$\text{Anchura del Intervalo} = p_{\text{high}} - p_{\text{low}}$$
 
 * Procesamiento Automático ("decision": "auto"): Ocurre cuando la anchura es $\le 0.2$. El modelo cuenta con suficiente densidad de datos históricos similares a los del cliente evaluado como para confiar plenamente en la probabilidad puntual otorgada.
