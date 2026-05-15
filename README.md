@@ -38,12 +38,19 @@ credit-risk-api/
 
 ## Instalación y Despliegue Local
 
-### 1. Arrancar el servidor de desarrollo mediante el comando unificado de `uv`:
-```uv run uvicorn api.main:app --reload --port 8080```
+### 1. Sincronización del entorno
+```bash
+uv sync
+```
+
+### 2. Arrancar el servidor de desarrollo
+```bash
+uv run uvicorn api.main:app --reload --port 8080
+```
 
 Una vez ejecutado, el servicio estará activo en el puerto 8080. Se puede acceder a la interfaz de documentación interactiva automatizada (Swagger UI) en: http://127.0.0.1:8080/docs
 
-### 2. Validar el funcionamiento con el archivo de prueba:
+### 3. Validar el funcionamiento con el archivo de prueba:
 En la raíz del proyecto dispones del archivo `ejemplo.txt`, el cual contiene un payload estructurado en formato JSON con las variables crudas de un cliente real extraído del dataset `accepted_2007_to_2017.csv`. Puedes copiar el contenido de este archivo directamente en el cuadro de texto del endpoint correspondiente en Swagger para verificar que el pipeline procesa los datos sin errores.
 
 ---
