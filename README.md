@@ -16,12 +16,12 @@ El proyecto está organizado como un paquete de Python autónomo bajo la siguien
 ```text
 credit-risk-api/
 ├── api/
-│   ├── models/                 # Almacenamiento local de los artefactos del pipeline
+│   ├── models/                 
 │   │   ├── feature_schema.json # Definición del orden y nombres de las 163 columnas
 │   │   ├── filter.pkl          # Pipeline de filtrado entrenado (Práctica 1)
 │   │   ├── practica2_model.pkl # Modelo calibrado con Venn-Abers (Repositorio 1 - Práctica 2)
 │   │   └── preprocessor.pkl    # Pipeline de preprocesamiento entrenado (Práctica 1)
-│   ├── __init__.py             # Inicializador del módulo de la API
+│   ├── __init__.py             
 │   └── main.py                 # Código principal de FastAPI y lógica de endpoints
 ├── src/                        # Código fuente heredado para la reconstrucción de objetos
 │   ├── filtering/
@@ -31,16 +31,16 @@ credit-risk-api/
 ├── ejemplo.txt                 # JSON real con el payload completo de un cliente para pruebas rápidas
 ├── model_predict.pdf           # Evidencia en PDF de la ejecución exitosa de /predict/
 ├── model_upload.pdf            # Evidencia en PDF de la ejecución exitosa de /upload_model/
-├── pyproject.toml              # Definición de dependencias del proyecto (FastAPI, skrub, etc.)
-├── uv.lock                     # Congelación de entornos para reproducibilidad exacta
-└── README.md                   # Documentación técnica del servicio
+├── pyproject.toml              
+├── uv.lock                     
+└── README.md                   
 ```
 
 ## Instalación y Despliegue Local
 
 ### 1. Arrancar el servidor de desarrollo mediante el comando unificado de `uv`:
 ```uv run uvicorn api.main:app --reload --port 8080```
-Una vez ejecutado, el servicio estará activo en el puerto 8080. Se puede acceder a la interfaz de documentación interactiva automatizada (Swagger UI) en: http://localhost:8080/docs
+Una vez ejecutado, el servicio estará activo en el puerto 8080. Se puede acceder a la interfaz de documentación interactiva automatizada (Swagger UI) en: http://127.0.0.1:8080/docs
 
 ### 2. Validar el funcionamiento con el archivo de prueba:
 En la raíz del proyecto dispones del archivo `ejemplo.txt`, el cual contiene un payload estructurado en formato JSON con las variables crudas de un cliente real extraído del dataset `accepted_2007_to_2017.csv`. Puedes copiar el contenido de este archivo directamente en el cuadro de texto del endpoint correspondiente en Swagger para verificar que el pipeline procesa los datos sin errores.
