@@ -40,6 +40,7 @@ credit-risk-api/
 
 ### 1. Arrancar el servidor de desarrollo mediante el comando unificado de `uv`:
 ```uv run uvicorn api.main:app --reload --port 8080```
+
 Una vez ejecutado, el servicio estará activo en el puerto 8080. Se puede acceder a la interfaz de documentación interactiva automatizada (Swagger UI) en: http://127.0.0.1:8080/docs
 
 ### 2. Validar el funcionamiento con el archivo de prueba:
@@ -65,6 +66,7 @@ curl -X 'POST' \
 ```
 
 * **Cuerpo de la Respuesta Exitosa (HTTP 200 OK):**
+```bash
 {
   "status": "ok",
   "message": "Pipeline y esquema actualizados correctamente.",
@@ -87,7 +89,7 @@ curl -X 'POST' \
     }
   }
 }
-
+```
 
 ### 2. Inferencia y Evaluación de Riesgo (POST /predict/)
 Recibe los datos en crudo del cliente (acepta tanto un único diccionario como un lote/batch en formato lista). Internamente, la API realiza de forma secuencial la ingesta de las variables, la imputación robusta de nulos, la codificación categórica y de texto adaptada a flujos de streaming, el filtrado/reordenación bajo el esquema exacto del modelo y la predicción multi-fold calibrada.
